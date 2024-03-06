@@ -1,0 +1,25 @@
+.single-post__date {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	margin-top: 25px;
+}
+
+.single-post__subtitle {
+	font-family: $font-family-base;
+	font-weight: 600;
+	//margin-top: 40px;
+}
+
+.single-post__link {
+	font-family: $font-family-base;
+	font-weight: 600;
+	
+	&:hover {
+		opacity: .7;
+	}
+}
+
+.single-post__content {
+	margin-top: 40px;
+}

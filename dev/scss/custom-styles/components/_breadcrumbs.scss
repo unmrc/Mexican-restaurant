@@ -1,0 +1,85 @@
+/** @section Breadcrumbs */
+
+// Local variables
+$breadcrumb-padding-vertical: 8px;
+$breadcrumb-padding-horizontal: 15px;
+$breadcrumb-bg: $gray-300;
+$breadcrumb-color: $black;
+$breadcrumb-active-color: $black;
+$breadcrumb-separator: "\f105";
+
+// Base styles
+.breadcrumbs-custom {
+	position: relative;
+	//padding: 35px 0 40px;
+	//text-align: center;
+	background-color: transparent;
+	background-position: center;
+}
+
+.breadcrumbs-custom-path {
+	@include spacingX(30px);
+
+	a {
+		display: inline;
+		vertical-align: middle;
+		font-size: 14px;
+		font-weight: 500;
+		&,
+		&:active,
+		&:focus {
+			//opacity: .7;
+			color: $breadcrumb-color;
+		}
+	}
+	
+	.linearicons-home2 {
+		font-size: 18px;
+	}
+
+	li {
+		position: relative;
+		display: inline-block;
+		//vertical-align: middle;
+		font-size: 14px;
+		line-height: 1.7;
+
+		&::after {
+			content: '';
+			display: inline-block;
+			height: 5px;
+			top: 55%;
+			right: -5px;
+			border-radius: 50%;
+			background-color: #000000;
+			width: 5px;
+			position: absolute;
+		}
+	}
+
+	li:last-child {
+		&:after {
+			display: none;
+		}
+	}
+
+	a:hover,
+	li.active {
+		//opacity: .7;
+		color: $breadcrumb-active-color;
+	}
+
+	li.active {
+		top: 2px;
+	}
+}
+
+* + .breadcrumbs-custom-path {
+	margin-top: 14px;
+}
+
+@include media-breakpoint-down(md) {
+	.breadcrumbs-custom-title {
+		font-size: 26px;
+	}
+}

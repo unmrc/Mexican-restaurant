@@ -1,0 +1,40 @@
+extends ../_skeleton
+
+block variables
+    - pageName = 'Reservations'
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+
+    section.section.section-custom
+        .container
+            .row.row-30.justify-content-center.text-center
+                .col-lg-8.bg-black.reservations-wrap
+                    h2.text-primary Make a Reservation
+                    p.text-primary We will call you to confirm your reservation at least <br> 24 hours prior to your reservation.
+
+                    form.rd-mailform.text-left.form-reservations.mt-5(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                        .form-wrap
+                            input#reservation-name.form-input(type="text" name="name" data-constraints='@Required', placeholder='Name')
+                        .form-wrap
+                            input#reservation-phone.form-input(type='text' name='phone' data-constraints='@Required @Numeric', placeholder='Enter your phone')
+                        .form-wrap
+                            select#reservation-visitors.form-input(name="visitors" data-constraints='@Required', data-placeholder='Number of People')
+                                option( label='Number of People' )
+                                option 1 person
+                                option 2 people
+                                option 3 people
+                                option 4 people
+                                option 5 people
+                        .form-wrap
+                            input#reservation-date.form-input(type='text' name='date' data-time-picker='date' data-constraints='@Required', placeholder='Date')
+                        .form-wrap
+                            input#reservation-time.form-input(type='text' name='time' data-time-picker='time' data-constraints='@Required', placeholder='Time')
+
+                        .form-button.text-center.mt-5
+                            button.btn.btn-primary.w-100 find a table
+
+
+    include ../sections/_footer-classic

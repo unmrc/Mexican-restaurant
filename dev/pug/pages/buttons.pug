@@ -1,0 +1,46 @@
+extends ../_skeleton
+
+block variables
+	- pageName = 'Buttons'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Button Sizes
+	section.section.section-xl.bg-default.text-center
+		.container
+			h4 Button Sizes
+			p 3 different sizes: small, default and large.
+			.group-xl
+				.btn.btn-sm.btn-black Small size
+				.btn.btn-black Default size
+				.btn.btn-lg.btn-black Large size
+
+	hr
+
+	//Button Shapes
+	section.section.section-xl.bg-default.text-center
+		.container
+			h4 Button Shapes
+			p 4 different shapes: default, round, round 2, and circle.
+			.group-xl
+				.btn.btn-black Default
+				.btn.btn-black.btn-round-1 Round 1
+				.btn.btn-black.btn-round-2 Round 2
+				.btn.btn-black.btn-circle Circle
+
+	hr
+
+
+	//Buttons with Shadow
+	section.section.section-xl.bg-default.text-center
+		.container
+			h4 Buttons with Shadow
+			p Enhance your buttons with a shadow effect.
+			.group-xl
+				.btn.btn-black.btn-circle.btn-shadow Shadow
+				.btn.btn-ghost.btn-circle.btn-shadow Shadow
+
+	include ../sections/_footer-classic

@@ -1,0 +1,39 @@
+header.section.page-header
+	//RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-classic(
+			data-layout=                'rd-navbar-fixed'
+			data-sm-layout=             'rd-navbar-fixed'
+			data-md-layout=             'rd-navbar-fixed'
+			data-lg-layout=             'rd-navbar-static'
+			data-xl-layout=             'rd-navbar-static'
+		
+			data-md-device-layout=      'rd-navbar-fixed'
+			data-lg-device-layout=      'rd-navbar-static'
+			data-xl-device-layout=      'rd-navbar-static'
+		
+			data-lg-stick-up-offset=    '46px'
+			data-xl-stick-up-offset=    '46px'
+			data-xxl-stick-up-offset=   '46px'
+			data-lg-stick-up=           'true'
+			data-xl-stick-up=           'true'
+			data-xxl-stick-up=          'true'
+		)
+
+			.rd-navbar-main-outer
+				.rd-navbar-main
+					//RD Navbar Panel
+					.rd-navbar-panel
+						//RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+						//RD Navbar Brand
+						.rd-navbar-brand
+							+logo
+
+					.rd-navbar-main-element
+						.rd-navbar-nav-wrap
+							+navigation( menu )
+							a(href='reservations.html').btn.btn-default-outline.d-lg-none.btn-header.ml-2 reservations
+
+						.rd-navbar-nav-wrap.ml-5.nav-bar-off.d-none.d-lg-block: a(href='reservations.html').btn.btn-default-outline.btn-header.ml-5 reservations

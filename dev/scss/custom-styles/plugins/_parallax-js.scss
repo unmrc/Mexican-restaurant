@@ -1,0 +1,159 @@
+//
+// Parallax
+// --------------------------------------------------
+
+.parallax-scene {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: left;
+	display: block;
+	pointer-events: none;
+	
+	.desktop & {
+		//@include media-breakpoint-up(lg) {
+		//	display: block;
+		//}
+	}
+	
+	&-wrapper {
+		position: relative;
+		
+		.container {
+			position: relative;
+			z-index: 1;
+		}
+		
+	}
+	
+	[class^='layer-'] {
+		position: absolute;
+		pointer-events: none;
+		
+		img {
+			max-width: none;
+		}
+	}
+	
+	.layer {
+		&-01 {
+			right: -23px;
+			top: 90%;
+		}
+		
+		&-02 {
+			left: 88%;
+			top: -60px;
+		}
+		
+		&-03 {
+			display: none;
+		}
+		
+		&-04 {
+			left: 4%;
+			bottom: -75%;
+		}
+	}
+	
+	@include media-breakpoint-up(sm) {
+		.layer {
+			&-04 {
+				bottom: -112%;
+			}
+		}
+	}
+	
+	@include media-breakpoint-up(lg) {
+		.layer {
+			&-01 {
+				right: -19px;
+				top: 26%;
+			}
+			
+			&-02 {
+				left: 65%;
+				top: 0;
+			}
+			
+			&-03 {
+				display: block;
+				left: 40%;
+				bottom: -150px;
+			}
+			
+			&-04 {
+				bottom: -65%;
+			}
+		}
+	}
+	
+	
+	@include media-breakpoint-up(xl) {
+		.layer {
+			&-01 {
+				right: 50px;
+				top: 100px;
+			}
+			
+			&-02 {
+				left: 55%;
+				top: 0;
+			}
+			
+			&-03 {
+				display: block;
+				left: 35%;
+				bottom: -150px;
+			}
+			
+			&-04 {
+				left: 5%;
+				bottom: -55%;
+			}
+		}
+	}
+	
+	
+	@include media-breakpoint-up(xxl) {
+		.layer {
+			&-01 {
+				right: -80px;
+				top: 0;
+			}
+			
+			&-02 {
+				left: 55%;
+				top: 0;
+			}
+			
+			&-03 {
+				left: 43%;
+				bottom: 0;
+			}
+			
+			&-04 {
+				left: 18%;
+				bottom: -45%;
+			}
+		}
+	}
+}
+
+.parallax-background {
+	background-size: contain;
+}
+
+@include media-breakpoint-up(md) {
+	.parallax-background {
+		background-size: 70%;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.parallax-background {
+		background-size: auto;
+	}
+}

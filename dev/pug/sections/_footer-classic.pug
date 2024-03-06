@@ -1,0 +1,55 @@
+footer.section.footer-classic.context-dark.bg-default
+	.container-fluid
+		.col-12.footer__images
+			.row.footer__images-styles.justify-content-center
+				.col-6.col-lg-3.wow.fadeInLeft
+					a.post-classic-media(href='#'): +img('footer-img-1-450x450')
+				.col-6.col-lg-3.wow.fadeInLeft
+					a.post-classic-media(href='#'): +img('footer-img-2-450x450')
+				h3.col-12.col-lg-1.text-primary @mexicata
+				.col-6.col-lg-3.wow.fadeInRight
+					a.post-classic-media(href='#'): +img('footer-img-3-450x450')
+				.col-6.col-lg-3.wow.fadeInRight
+					a.post-classic-media(href='#'): +img('footer-img-4-450x450')
+
+section.section.section-lg.bg-black.bg-default.wow.fadeInUp
+	.container
+		.divider.divider-primary
+		.row.row-50.footer-content
+			.col-lg-6.col-xl-3
+				.rd-navbar-brand
+					+logo
+			.col-lg-6.col-xl-2
+				h6.footer-heading Opening Hours
+				ul.list.list-md.mt-4
+					li: a.text-primary.font-weight-normal.footer-link(href='tel:#') Tel: 123-456-7890
+					li: a.text-primary.font-weight-normal.footer-link(href='#') Mon - Fri: 8am - 10pm
+					li: a.text-primary.font-weight-normal.footer-link(href='#') Sat - Sun: 9am - 11pm
+			.col-lg-6.col-xl-2
+				h6.footer-heading Information
+				ul.list.list-md.mt-4
+					li: a.text-primary.font-weight-normal.footer-link(href='our-story.html') Our Story
+					li: a.text-primary.font-weight-normal.footer-link(href='menu.html') Menu
+					li: a.text-primary.font-weight-normal.footer-link(href='single-post.html') Single Post
+					li: a.text-primary.font-weight-normal.footer-link(href='contact.html') Contact
+			.col-lg-6.col-xl-2
+				h6.footer-heading Pages
+				ul.list.list-md.mt-4
+					li: a.text-primary.font-weight-normal.footer-link(href='forms.html') Forms
+					li: a.text-primary.font-weight-normal.footer-link(href='buttons.html') Buttons
+					li: a.text-primary.font-weight-normal.footer-link(href='grid-system.html') Grid System
+					li: a.text-primary.font-weight-normal.footer-link(href='privacy-policy.html') Privacy Policy
+					li: a.text-primary.font-weight-normal.footer-link(href='typography.html') Typography
+			.col-lg-12.col-xl-3
+				p.footer-text Join our newsletter for access to special deals, recipes and exclusive benefits.
+
+				form.rd-form.mailchimp-mailform.rd-form-inline(data-form-output='form-output-global' action='https://templatemonster.us1.list-manage.com/subscribe/post?u=1e39a6d114a4cc130a4edbe43&id=9fc9ef194a' method='post')
+					.form-wrap
+						label.form-label(for='mailchimp-email') Email
+						input#mailchimp-email.form-input.form-footer(type='email' name='email' data-constraints='@Email @Required')
+					.form-button
+						button.btn.btn-footer(type='submit') send
+
+	.container: .row.row-10.align-items-center.justify-content-sm-between
+		.col-sm-auto: +rights
+		.col-sm-auto: +widget-list([], '', 'list-social list-inline-sm')

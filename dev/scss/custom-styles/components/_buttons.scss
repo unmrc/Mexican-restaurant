@@ -1,0 +1,232 @@
+/** @section Buttons */
+
+// Button General Styles
+.btn {
+	font-family: $font-family-base;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 21px;
+	padding: 14px 64px;
+	border: 1px solid $black;
+	border-radius: 6px;
+	position: relative;
+	overflow: hidden;
+	text-transform: $btn-text-transform;
+	text-overflow: ellipsis;
+}
+
+.btn-lg {
+	@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, 6px);
+}
+
+.btn-sm {
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, 6px);
+}
+
+.page {
+	.btn {
+		&:not([class*='shadow']) {
+			box-shadow: none;
+		}
+
+		&:not(:disabled):not(.disabled):active:focus,
+		&:not(:disabled):not(.disabled).active:focus{
+			&:not([class*='shadow']) {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+// Appearance style
+.btn-primary {
+	@include btn-variant($black, $primary, $primary, $primary, transparent, $primary);
+}
+
+.btn-gray-100 {
+	@include btn-variant($gray-800, $gray-100, $gray-100, $gray-800, darken($gray-100, 5%), darken($gray-100, 5%));
+}
+
+// Outline
+.btn-default-outline {
+	@include btn-variant($black, transparent, $black, $primary, $black, $black);
+}
+
+.btn-ghost {
+	border: 0;
+	background-color: transparent;
+
+	&:hover {
+		color: $white;
+		background: $primary;
+	}
+}
+
+// Social
+.btn-facebook {
+	@include btn-variant($white, $facebook, $facebook, $white, $facebook-darken, $facebook-darken);
+}
+
+.btn-twitter {
+	@include btn-variant($white, $twitter, $twitter, $white, $twitter-darken, $twitter-darken);
+}
+
+.btn-google {
+	@include btn-variant($white, $google, $google, $white, $google-darken, $google-darken);
+}
+
+// Btn with shadow
+.btn-shadow {
+	box-shadow: 0 9px 21px 0 rgba($black, 0.35);
+
+	&:hover {
+		box-shadow: 0 9px 10px 0 rgba($black, 0.35);
+	}
+
+	&:focus,
+	&:active {
+		box-shadow: none;
+	}
+}
+
+// Button effects
+.btn-ujarak {
+	position: relative;
+	z-index: 0;
+	transition: background .4s, border-color .4s, color .4s;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: $primary;
+		z-index: -1;
+		opacity: 0;
+		transform: scale3d(0.7, 1, 1);
+		transition: transform 0.42s, opacity 0.42s;
+		border-radius: inherit;
+	}
+
+	&,
+	&::before {
+		transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	}
+
+	&:hover {
+		transition: background .4s .4s, border-color .4s 0s, color .2s 0s;
+
+		&::before {
+			opacity: 1;
+			transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+		}
+	}
+}
+
+// Button Sizes
+
+// Button Shapes
+.btn-circle {
+	border-radius: 30px;
+}
+
+.btn-round {
+	&.btn-icon {
+		padding: 14px 64px !important;
+		
+		&::after {
+			content: '' !important;
+		}
+	}
+}
+
+.btn-round-1 {
+	border-radius: 10px;
+}
+
+.btn-round-2 {
+	border-radius: 15px;
+}
+
+// Button Icon styles
+.btn {
+	&.btn-icon {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		vertical-align: middle;
+		border: 0;
+		padding: 0;
+		
+		
+		&::after {
+			font-family: "Material Design Icons";
+			display: inline-block;
+			margin-left: 19px;
+			content: '\f155';
+			transform: translateY(1px);
+			font-size: 20px;
+			transition: all .1s ease;
+		}
+		
+		&:hover {
+			&::after {
+				transform: rotateZ(45deg);
+			}
+		}
+
+		.icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			color: inherit;
+			font-size: 1.55em;
+			line-height: 1em;
+		}
+
+		&-left {
+			.icon {
+				padding-right: 11px;
+			}
+		}
+
+		&-right {
+			flex-direction: row-reverse;
+
+			.icon {
+				padding-left: 11px;
+			}
+		}
+
+		&.btn-link {
+			.icon {
+				top: 5px;
+				font-size: 1em;
+			}
+		}
+
+		&.btn-xs {
+			.icon {
+				top: .05em;
+				font-size: 1.2em;
+				padding-right: 8px;
+			}
+
+			.btn-icon-right {
+				padding-left: 8px;
+			}
+		}
+	}
+}
+
+.btn-black {
+	background-color: $black;
+	color: $primary;
+	
+	&:hover {
+		color: $black;
+		background-color: transparent;
+	}
+}

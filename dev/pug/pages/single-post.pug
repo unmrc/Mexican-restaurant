@@ -1,0 +1,79 @@
+extends ../_skeleton
+
+block variables
+    - pageName = 'Single post'
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+
+    section.section.section-custom.bg-layer
+        .bg-white.bg-layer-absolute
+        .container
+            .row.row-30.justify-content-center
+                .col-lg-8.text-center
+                    h2 10 Mexican Recipes You'll Be Making On Repeat
+                    .single-post__date Published: March 2, 2021
+                .col-lg-8.mt-5
+                    +img('single-post-1-930x500.jpg')
+                    h5.single-post__subtitle.mt-5 Mexican cuisine
+                    p.font-weight-normal What comes to mind when mentioning Mexican cuisine? Nachos, burrito, quesadilla, salsa. From one mention of these dishes literally "saliva flows," and the kitchen itself is recognized as a masterpiece of intangible heritage. So what's the secret to a stunning, fragrance-rich kitchen? Let's figure it out:
+                    ul.ml-4.mt-4.list-marked
+                        li: p.font-weight-normal The basis of many dishes - corn and wheat tortillas
+                        li: p.font-weight-normal Mail in each recipe has its own special sauce
+                        li: p.font-weight-normal The dishes include meat, beans and greens - this is very tasty
+                        li: p.font-weight-normal Nachos and corn chips - with this associated Mexico
+
+                .col-lg-8.mt-5
+                    .row
+                        .col-lg-6
+                            +img('single-post-2-459x420.jpg')
+                        .col-lg-6
+                            h5.single-post__subtitle.mt-5.mt-lg-0 Food and society
+                            p.font-weight-normal.mt-4 Mexicans eat with their hands. Can you imagine that someone will choppy cut a tortilla with meat, beans and greens with a knife and fork? Only here you can give will to temperament, enjoying, laughing and humming with pleasure.
+                            p.font-weight-bold Despite a fairly small list of the main ingredients, the recipes of Mexican cuisine are extremely diverse, and spicy sauces, which include chili peppers, add piquancy.
+                            p.font-weight-normal It is generally good for meat lovers to come to Mexico, and both pork beef and poultry are widely used.
+
+                        .col-12.mt-5
+                            h5.single-post__subtitle Mexican cuisine is an important aspect of the culture, social structure and popular traditions of Mexico.
+                            p.font-weight-normal The history of local delicious attractions is the interaction of two culinary traditions, Spanish, which appeared in Mexico in the 16th century, and Indian. Of course, the recipe has always been corn, beans, chili, a variety of spices, Mexican cactus and tomatoes.
+                            p.font-weight-bold Trying Mexican cuisine, you can try to learn more about the character traits of the inhabitants of the country, imbue their sense of life, look into the depths of the people's soul.
+
+                            .divider.divider-lg
+                            +widget-list([], '', 'list-blog-post list-inline-sm')
+
+    section.section.section-xl.bg-default
+        .container
+            .row.row-30.justify-content-center
+                .col-lg-8.no-gutters
+                    h4 What to Read Next
+                    .col-12.single-post__content
+                        .row.row-30
+                            .col-md-6
+                                a(href='single-post.html').post-classic-media
+                                    +img('single-post-3-450x300.jpg')
+                            .col-md-6
+                                h5.single-post__link
+                                    a(href='single-post.html') Mexican cuisine
+                                p.font-weight-normal World famous Mexican avocado sauce. Its aroma, unique taste and freshness make this sauce popular on different continents.
+
+                            .col-md-6
+                                a(href='single-post.html').post-classic-media
+                                    +img('single-post-4-450x300.jpg')
+                            .col-md-6
+                                h5.single-post__link
+                                    a(href='single-post.html') Easy Spicy Green Guacamole
+                                p.font-weight-normal Especially good guacamole sauce with nachos chips from corn tortillas, as well as with fresh vegetables or toast from bread.
+
+                            .col-md-6
+                                a(href='single-post.html').post-classic-media
+                                    +img('single-post-5-450x300.jpg')
+                            .col-md-6
+                                h5.single-post__link
+                                    a(href='single-post.html') Authentic Mexican Food
+                                p.font-weight-normal You want to try something new? Prepare to experience an explosion of taste - this is the easiest and most popular recipe in the world.
+
+
+
+    include ../sections/_footer-classic

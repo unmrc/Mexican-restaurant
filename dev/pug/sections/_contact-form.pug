@@ -1,0 +1,33 @@
+// Contacts
+section.section.section-custom.bg-default
+    .container
+        h2.text-center Contact Us
+        .row
+            .col-xl-4.offset-xl-1.mt-5
+                .price-list-dark
+                    h4.text-primary Opening Hours
+                    ul.list.list-xs.mt-4
+                        li: a.text-primary.subtitle.footer-link(href='tel:#') Tel: 123-456-7890
+                        li: a.text-primary.subtitle.footer-link(href='#') Mon - Fri: 8am - 10pm
+                        li: a.text-primary.subtitle.footer-link(href='#') Sat - Sun: 9am - 11pm
+
+                    h4.text-primary.mt-5 Address
+                    p.subtitle.text-primary 4140 Parker Rd. <br> Allentown, New Mexico 31134
+            .col-xl-5.offset-xl-1.mt-5
+                p.subtitle We’re here for you. E-mail any questions or concerns to mail@demolink.org
+                //RD Mailform
+                form.rd-mailform.text-left.mt-5(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                    .form-wrap
+                        label.form-label(for="contact-name") Name
+                        input#contact-name.form-input(type="text" name="name" data-constraints='@Required')
+                    .form-wrap
+                        label.form-label(for="contact-email") E-mail
+                        input#contact-email.form-input(type="email" name="email" data-constraints='@Required @Email')
+                    .form-wrap
+                        label.form-label(for="contact-subject") Subjects
+                        input#contact-subject.form-input(type="text" name="subject" data-constraints='@Required')
+                    .form-wrap
+                        label.form-label(for="contact-message") Message
+                        textarea#contact-message.form-input(name="message" data-constraints='@Required')
+                    .form-button
+                        button(type="submit").btn.btn-black.btn-block send now

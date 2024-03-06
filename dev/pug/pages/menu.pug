@@ -1,0 +1,188 @@
+extends ../_skeleton
+include  ../components/price-list
+
+block variables
+	- pageName = 'Menu'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+
+	section.section.section-md.bg-default
+		.container
+			h2.text-center Our Menu
+			.row.row-50.justify-content-center
+				.col-lg-6.mt-4
+					.price-list-dark
+						h4.text-primary.text-center Appetizers
+
+						hr
+
+						+price-list({
+							title: 'GUACAMOLE',
+							text: 'Fresh avocados blended with onions, tomatoes and jalapenos, served with a basket of our crispy chips and sauce',
+							price: '$7.99'
+						})
+						+price-list({
+							title: 'CHILE CON QUESO',
+							text: 'Two types of american cheeses, yellow and white melted together with onions, bell peppers, tomatoes',
+							price: '$6.99'
+						})
+						+price-list({
+							title: 'TOSTADA NACHOS',
+							text: 'Tostada chips topped with beans, your choice of grilled chicken, steak or a combo of both and white cheese served with guacamole',
+							price: '$8.99'
+						})
+						+price-list({
+							title: 'CHICKEN TACO SLIDERS',
+							text: '4 mini flour tortillas filled with shredded chicken and yellow cheese. Served with chile con quest and chile verde for dipping.',
+							price: '$7.99'
+						})
+
+				.col-lg-6.mt-4
+					.price-list-dark
+						h4.text-primary.text-center Burritos
+
+						hr
+
+						+price-list({
+							title: 'BURRITO ALEGRE',
+							text: 'Try one of our delicious burrito spreads, filled with your choice of chicken, ground beef or pork. served with a side of rice and beans',
+							price: '$9.99'
+						})
+						+price-list({
+							title: 'BURRITO DORADO',
+							text: 'One of rudy\'s large flour tortillas filled with pork, rice, white cheese, and jalapeño, deep-fried and topped with red sauce and white cheese.',
+							price: '$10.99'
+						})
+						+price-list({
+							title: 'ENCHILADA BURRITO',
+							text: 'Your choice o f pork, shredded chicken or ground beef, rolled up in a flour tortilla with refried beans topped with our enchilada sauce and queso fresco.',
+							price: '$11.99'
+						})
+						+price-list({
+							title: 'VEGETARIAN BURRITO',
+							text: 'Flour tortilla filled with refried beans, rice, guacamole, sour cream, pico de gallo, and shredded lettuce.',
+							price: '$8.99'
+						})
+
+
+	section.section.section-md.bg-white.context-dark
+		.container
+			.row.row-50.justify-content-center
+				.col-lg-6
+					.price-list-primary
+						h4.text-center Tacos y enchiladas
+
+						hr
+
+						+price-list({
+							title: 'PUROS TACOS',
+							text: 'For the taco lover. five of our crispy beef tacos, served with a side of rice or beans',
+							price: '$11.99'
+						})
+						+price-list({
+							title: 'EL REY',
+							text: 'Three of rudy\'s delicious chicken tacos, topped with lettuce and cheese. served with a side of rice or fideo',
+							price: '$12.99'
+						})
+						+price-list({
+							title: 'TACOS NO CARNE',
+							text: 'A great vegetarian option! Three corn tortillas deep-fried and filled with perfectly seasoned meatless crumbles, topped with parmesan cheese and lettuce.',
+							price: '$10.99'
+						})
+						+price-list({
+							title: 'EL PADRINO',
+							text: 'One fish taco, one shrimp taco, and one enchilada of your choice. served with rice and beans',
+							price: '$14.99'
+						})
+
+				.col-lg-6
+					.price-list-primary
+						h4.text-center Ensaladas
+
+						hr
+
+						+price-list({
+							title: 'TACO SALAD',
+							text: 'Served in a tortilla bowl with beans, lettuce, cheddar cheese, sour cream, guacamole, tomatoes and chicken',
+							price: '$9.99'
+						})
+						+price-list({
+							title: 'VEGGIE TACO SALAD',
+							text: 'Whole beans, lettuce, white and yellow cheese, guacamole, cucumbers, sour cream and tomatoes served in a tortilla bowl',
+							price: '$10.99'
+						})
+						+price-list({
+							title: 'SHRIMP TACO SALAD',
+							text: 'A generous portion of shrimp, lettuce, yellow cheese, guacamole, cucumbers, and tomatoes served in a tortilla bowl',
+							price: '$11.99'
+						})
+						+price-list({
+							title: 'FAJITA TACO SALAD',
+							text: 'Served in a tortilla bowl with beans, lettuce, white and yellow cheese, guacamole, sour cream, pico de gallo and your choice of steak or chicken',
+							price: '$8.99'
+						})
+
+
+	section.section.section-md
+		.container
+			.row.row-50.justify-content-center
+				.col-lg-6
+					.price-list-dark
+						h4.text-primary.text-center Desserts
+
+						hr
+
+						+price-list({
+							title: 'CHURROS',
+							text: 'Fried dough pastries rolled in cinnamon and brown sugar A la mode add $0.50',
+							price: '$5.99'
+						})
+						+price-list({
+							title: 'MINI CHIMIS',
+							text: 'Homemade cheesecake bites sprinkled with powdered sugar and drizzled with chocolate and raspberry syrup',
+							price: '$4.99'
+						})
+						+price-list({
+							title: 'SOPAPILLAS',
+							text: 'Fried puffy pastries sprinkled with cinnamon and brown sugar. Topped with honey',
+							price: '$5.99'
+						})
+						+price-list({
+							title: 'FRIED ICE CREAM',
+							text: 'Vanilla ice cream rolled in flakes and deep-fried.',
+							price: '$3.99'
+						})
+
+				.col-lg-6
+					.price-list-dark
+						h4.text-primary.text-center Drinks
+
+						hr
+
+						+price-list({
+							title: 'HOUSE MARGARITAS',
+							text: 'Lime only, frozen or rocks',
+							price: '$3.99'
+						})
+						+price-list({
+							title: 'DRAFT BEER',
+							text: 'By the pint',
+							price: '$2.99'
+						})
+						+price-list({
+							title: 'HOUSE WELLS',
+							text: 'Vodka, rum, gin, scotch, bourbon',
+							price: '$4.99'
+						})
+						+price-list({
+							title: 'SANGRIA',
+							text: 'Red or White',
+							price: '$4.99'
+						})
+
+
+	include ../sections/_footer-classic

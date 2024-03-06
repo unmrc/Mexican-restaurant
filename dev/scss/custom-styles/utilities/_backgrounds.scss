@@ -1,0 +1,94 @@
+/** @section Backgrounds */
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+
+// Light Backgrounds
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+
+// Dark Backgrounds
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+.bg-black {
+	@extend %context-dark;
+	@include bg-behaviour($black);
+}
+
+
+// Accent Backgrounds
+.bg-primary {
+	@extend %context-dark;
+	@include bg-behaviour($primary);
+}
+
+
+// Background Image
+.bg-image {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+// Background layer
+.bg-layer {
+	position: relative;
+	z-index: 0;
+}
+
+.bg-layer-absolute {
+	position: absolute;
+	content: '';
+	top: 27%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+
+// Desktop only
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}

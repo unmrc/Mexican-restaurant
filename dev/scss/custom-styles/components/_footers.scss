@@ -1,0 +1,179 @@
+/** @section Footers */
+
+// Footer Classic
+.footer-classic {
+	padding: 80px 0;
+	background: $black;
+	overflow: hidden;
+	
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	h3 {
+		text-align: center;
+		margin: 30px 0;
+		font-size: 36px;
+		
+		@include media-breakpoint-up(lg) {
+			& {
+				transform: rotate(-91deg);
+				transform-origin: 127% 52%;
+			}
+		}
+		
+		@include media-breakpoint-up(xl) {
+			& {
+				transform: rotate(-90deg);
+				transform-origin: 120% 44%;
+			}
+		}
+		
+		@include media-breakpoint-up(xxl) {
+			& {
+				transform-origin: 115% 32%;
+			}
+		}
+	}
+	
+	.footer__images {
+		margin-top: 80px;
+	}
+	
+	.footer__images-styles {
+		margin: 0 -40px;
+		
+		@include media-breakpoint-up(lg) {
+			flex-wrap: nowrap;
+		}
+	}
+}
+
+.footer-heading {
+	font-family: $font-family-base;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 23px;
+	text-transform: uppercase;
+	color: $primary !important;
+}
+
+.footer-text {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 34px;
+	color: $primary;
+}
+
+.btn-footer {
+	color: $primary;
+	border-color: $primary;
+	
+	
+	margin-top: 0;
+	margin-left: 10%;
+	
+	&:hover {
+		color: $black;
+		background-color: $primary;
+	}
+	
+	@include media-breakpoint-up(xl) {
+		& {
+			margin-top: 10px;
+			margin-left: 30%;
+		}
+	}
+	
+	@include media-breakpoint-up(xxl) {
+		& {
+			margin-left: 155px;
+		}
+	}
+}
+
+.form-footer {
+	color: $primary;
+	border: 0;
+	border-bottom: 1px solid $primary;
+	border-radius: 0;
+	background-color: transparent;
+	
+	&.form-label {
+		color: $primary;
+	}
+}
+
+.footer-content {
+	margin-top: 50px;
+	text-align: center;
+	
+	@include media-breakpoint-up(lg) {
+		& {
+			text-align: initial;
+		}
+	}
+	
+	@include media-breakpoint-up(xl) {
+		& {
+			margin-top: 80px;
+		}
+	}
+	
+	@include media-breakpoint-up(xxl) {
+		& {
+			margin-top: 110px;
+		}
+	}
+}
+
+.footer-link:hover {
+	opacity: .6;
+}
+
+.list-social {
+	margin-top: 50px;
+	
+	
+	a {
+		
+		margin-left: 40px;
+		
+		
+		&:hover,
+		&:active,
+		&:focus {
+			color: $primary;
+			opacity: .6;
+		}
+	}
+	
+	.mdi-facebook {
+		margin-left: 0;
+	}
+	
+	@include media-breakpoint-up(xxl) {
+		& {
+			margin-top: 100px;
+		}
+	}
+}
+
+.list-blog-post {
+	margin-top: 30px;
+	margin-left: -40px;
+	a {
+		color: $black;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			color: $primary;
+		}
+	}
+	
+	li {
+		margin-left: 40px;
+	}
+}

@@ -1,0 +1,134 @@
+//- Image
+	@param {string} name
+mixin img( name, options )
+	-
+		var size = getImageSize( name );
+		if( options && options.retina ) { size[0] = ~~(size[0]/2); size[1] = ~~(size[1]/2); }
+	img( src= procImg( name ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+		block
+
+
+//- Parallax Section
+	@param {object} obj - parameters storage
+	@param {string} obj.img - image path
+	@param {string} obj.innerClass - content wrapper class
+mixin parallax( obj )
+	section.parallax-container( data-parallax-img= procImg( obj.img ) )&attributes( attributes )
+		.parallax-content( class= obj.innerClass )
+			block
+
+
+//- Breadcrumbs
+	@param {Array}  [path] - other navigation path
+	@example +breadcrumbs([ { title:'About Us', link:'about-us.html' }, { title:'Team member' } ])
+mixin breadcrumbs( path )
+	-
+		if ( !path ) {
+			if ( breadcrumbs && breadcrumbs.length ) path = breadcrumbs;
+			else path = [{ title: pageName }];
+		}
+
+	// Breadcrumbs
+	section.breadcrumbs-custom(data-preset!={ title:'Breadcrumbs', category:'header', reload:false, id:'breadcrumbs' } )
+		.container
+			if ( path[0].title.toLowerCase() !== 'home' )
+				ul.breadcrumbs-custom-path
+					li: a( href='index.html')
+						svg(width='17' height='15' viewBox='0 0 17 15' fill='none' xmlns='http://www.w3.org/2000/svg')
+							path(d='M13.9091 15H3.09091C2.88597 15 2.68942 14.9196 2.54451 14.7764C2.39959 14.6332 2.31818 14.439 2.31818 14.2366V7.36577H0L7.97995 0.198763C8.12222 0.0708726 8.30765 0 8.5 0C8.69235 0 8.87778 0.0708726 9.02005 0.198763L17 7.36577H14.6818V14.2366C14.6818 14.439 14.6004 14.6332 14.4555 14.7764C14.3106 14.9196 14.114 15 13.9091 15ZM3.86364 13.4732H13.1364V5.95879L8.5 1.79508L3.86364 5.95879V13.4732Z' fill='black')
+					- for ( var i = 0; i < path.length; i++ )
+						if ( i === path.length - 1 )
+							li.active= path[i].title
+						else
+							li: a( href= path[i].link )= path[i].title
+
+
+//- Main Navigation
+mixin navigation( menu, type )
+	if( !type )
+		ul.rd-navbar-nav&attributes( attributes )
+			each item in menu
+				li.rd-nav-item( class= { active: item.active } )
+					a.rd-nav-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+					if( item.megamenu )
+						+navigation( item.megamenu, 'megamenu' )
+
+	else if( type === 'dropdown' )
+		ul.rd-menu.rd-navbar-dropdown
+			each item in menu
+				li.rd-dropdown-item( class= { active: item.active } )
+					a.rd-dropdown-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+
+	else if( type === 'megamenu' )
+		ul.rd-menu.rd-navbar-megamenu
+			each item in menu
+				li.rd-megamenu-item
+					if ( item instanceof Array )
+						+navigation( item, 'column' )
+					else
+						+navigation( item, 'block' )
+
+	else if( type === 'column' )
+		each item in menu
+			+navigation( item, 'block' )
+
+	else if( type === 'block' )
+		if (menu.title && menu.link)
+			.divider.divider-primary
+		else if (menu.title)
+			.divider.divider-primary
+		if (menu.list)
+			+navigation( menu.list, 'list' )
+
+	else if( type === 'list' )
+		ul.rd-megamenu-list
+			each item in menu
+				li.rd-megamenu-list-item
+					a.rd-megamenu-list-link( href= item.link )= item.title
+
+
+//- Logo
+mixin logo
+	//Brand
+	a.brand( href='index.html' )&attributes( attributes )
+		+img( logo.default).brand-logo-dark
+		+img( logo.inverse).brand-logo-light.ml-auto.mr-auto.ml-lg-0.mr-lg-0
+
+
+//- Copyright
+mixin rights
+	p.rights&attributes( attributes )
+		span &copy;&nbsp; 
+		span.copyright-year
+		span &nbsp;
+		span= logo.name
+		span  |&nbsp;
+		a( href='privacy-policy.html' ) Privacy policy
+
+//- Social List Widget
+//- socials - an array of {link}
+//- iclass - icon class
+//- lclass - list class
+
+mixin widget-list(socials, iclass, lclass)
+	- var iclass = iclass ? " " + iclass : " icon-xxs"
+	- var lclass = lclass
+
+	ul.list-inline(class=lclass)
+		if(socials.length)
+			each link in socials
+				li: a(href=link.href class=link.icon + iclass)
+		else
+			li: a( href='#' class='icon mdi mdi-facebook' )
+			li: a( href='#' class='icon mdi mdi-youtube-play' )
+			li: a( href='#' class='icon mdi mdi-instagram' )

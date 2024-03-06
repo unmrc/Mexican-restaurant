@@ -1,0 +1,59 @@
+/** @section Posts */
+
+// Post Classic
+.post-classic {
+	.post-classic-meta {
+		font-size: 12px;
+		margin-top: 20px;
+	}
+	.post-classic-title {
+		font-family: $font-family-base;
+		font-weight: 600;
+		margin-top: 15px;
+		
+		&:hover {
+			opacity: .7;
+		}
+	}
+	
+	.divider {
+		margin-top: 20px;
+	}
+}
+
+.post-classic-media {
+	position: relative;
+	display: block;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba($black, .3);
+		transition: .4s ease-in-out;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+	
+	img {
+		width: 100%;
+	}
+	
+	&:hover {
+		&::before {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+// Context styling
+%context-dark {
+	.post-classic {
+
+	}
+}

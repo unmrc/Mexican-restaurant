@@ -1,0 +1,21 @@
+# Мусор ( игнорируется везде )
+*.map
+*.db
+
+# Игнорирование всего в корне проекта
+/*
+
+# Обязательные файлы
+!/.gitignore
+!/config.js
+!/gulpfile.js
+!/package.json
+
+# Обязательные папки
+!/dev
+!/dist
+!/builder
+
+!/sources
+/sources/*
+!/sources/documentation

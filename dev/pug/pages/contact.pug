@@ -1,0 +1,28 @@
+extends ../_skeleton
+
+block variables
+    - pageName = 'Contact'
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+
+
+    include ../sections/_contact-form
+
+    section.section-xl.bg-default
+        .container
+            .divider
+            .row.text-center.justify-content-around
+                .col-lg-4.about-us__card
+                    p This cozy restaurant has left the best impressions! Hospitable hosts, delicious dishes, beautiful presentation, wide wine list and wonderful dessert.
+                    +img('partner-1-130x30.png')
+                .col-lg-4.about-us__card
+                    p Excellent food. Menu is extensive and seasonal to a particularly high standard. Definitely fine dining. I gladly recommend it to every fan of Mexican cuisine!
+                    +img('partner-2-200x30.png')
+                .col-lg-4.about-us__card
+                    p This place is great! Atmosphere is chill and cool but the staff is also really friendly. The food is always fantastic and I am always delighted with my meal!
+                    +img('partner-3-120x35.png')
+
+    include ../sections/_footer-classic

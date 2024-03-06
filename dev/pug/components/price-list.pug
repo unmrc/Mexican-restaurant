@@ -1,0 +1,12 @@
+//- Price list
+	@param {object} data
+	@param {string} data.to
+	@param {string} [data.from]
+	@param {string} [data.count]
+mixin price-list( data )
+	.price-list
+		.price-list-body
+			.price-list-title.big= data.title
+			if ( data.text )
+				.price-list-text= data.text
+		.price-list-value= data.price

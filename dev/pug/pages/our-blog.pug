@@ -1,0 +1,84 @@
+extends ../_skeleton
+
+block variables
+    - pageName = 'Our blog'
+
+block page
+    include ../sections/_header-classic
+
+    +breadcrumbs
+
+
+    section.section.section-custom.bg-default
+        .container
+            article.blog-layout
+                .blog-layout-main
+                    h2.text-center Our Blog
+                    .row.row-80.row-xxl-70.mt-5
+                        .col-md-4
+                            // Post Classic
+                            article.post-classic
+                                a.post-classic-media(href=links.post): +img('sidebar-blog-2-450x530')
+                                ul.post-classic-meta
+                                    li: time(datetime='2021') March 2, 2021
+                                h5.post-classic-title: a(href=links.post) Mexican Corn Pinwheels
+                                .text-right.mt-4
+                                    a(href='single-post.html').btn.btn-icon read more
+                                .divider
+
+                        .col-md-4
+                            // Post Classic
+                            article.post-classic
+                                a.post-classic-media(href=links.post): +img('sidebar-blog-1-450x530')
+                                ul.post-classic-meta
+                                    li: time(datetime='2021') March 2, 2021
+                                h5.post-classic-title: a(href=links.post) Easy Ground Beef Tacos
+                                .text-right.mt-4
+                                    a(href='single-post.html').btn.btn-icon read more
+                                .divider
+
+                        .col-md-4
+                            // Post Classic
+                            article.post-classic
+                                a.post-classic-media(href=links.post): +img('sidebar-blog-3-450x530')
+                                ul.post-classic-meta
+                                    li: time(datetime='2021') March 2, 2021
+                                h5.post-classic-title: a(href=links.post) Spicy Green Guacamole
+                                .text-right.mt-4
+                                    a(href='single-post.html').btn.btn-icon read more
+                                .divider
+
+                        .col-md-4
+                            // Post Classic
+                            article.post-classic
+                                a.post-classic-media(href=links.post): +img('sidebar-blog-4-450x530')
+                                ul.post-classic-meta
+                                    li: time(datetime='2021') March 2, 2021
+                                h5.post-classic-title: a(href=links.post) 10 Mexican Recipes
+                                .text-right.mt-4
+                                    a(href='single-post.html').btn.btn-icon read more
+                                .divider
+
+                        .col-md-4
+                            // Post Classic
+                            article.post-classic
+                                a.post-classic-media(href=links.post): +img('sidebar-blog-5-450x530')
+                                ul.post-classic-meta
+                                    li: time(datetime='2021') March 2, 2021
+                                h5.post-classic-title: a(href=links.post) Authentic Mexican Food
+                                .text-right.mt-4
+                                    a(href='single-post.html').btn.btn-icon read more
+                                .divider
+
+                        .col-md-4
+                            // Post Classic
+                            article.post-classic
+                                a.post-classic-media(href=links.post): +img('sidebar-blog-6-450x530')
+                                ul.post-classic-meta
+                                    li: time(datetime='2021') March 2, 2021
+                                h5.post-classic-title: a(href=links.post) Mexican Dinner Recipes
+                                .text-right.mt-4
+                                    a(href='single-post.html').btn.btn-icon read more
+                                .divider
+
+    include ../sections/_footer-classic

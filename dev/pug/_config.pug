@@ -1,0 +1,70 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Righteous&display=swap",
+		logo = {
+			default: 'logo-default-163x38.svg',
+			inverse: 'logo-inverse-163x38.svg',
+			name: 'Mexicata - Mexican Restaurant'
+		},
+		links = {
+			post: 'single-post.html',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#b6c062'
+		},
+		menu = [
+			{
+				title: 'Home',
+				link: 'index.html'
+			},
+			{
+				title: 'Menu'
+			},
+			{
+				title: 'Our Story'
+			},
+			{
+				title: 'Pages',
+				link: null,
+				megamenu: [
+					{
+						title: 'Pages 1',
+						list: [
+							{ title: 'Typography' },
+							{ title: 'Buttons' },
+							{ title: 'Forms' },
+							{ title: 'Tabs and accordions' },
+						]
+					},
+					{
+						title: 'Pages 2',
+						link: null,
+						list: [
+							{ title: 'Grid system' },
+							{ title: 'Privacy policy' },
+							{title: 'Progress bars'},
+							{title: 'Tables'}
+						]
+					},
+					{
+						title: 'Pages 3',
+						link: null,
+						list: [
+							{ title: 'Under Construction' },
+							{ title: 'Search results' },
+							{ title: 'Our blog' },
+							{ title: 'Single post' }
+						]
+					},
+				]
+			},
+			{
+				title: 'Contact'
+			}
+		],
+
+		// Predefined variables
+		breadcrumbs = [],
+		pageName = 'Home'

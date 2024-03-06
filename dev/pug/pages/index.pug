@@ -1,0 +1,248 @@
+extends ../_skeleton
+
+block page
+	include ../sections/_header-classic
+	include ../components/counter
+	include ../components/gallery-item
+	include ../components/thumbnail
+
+
+	//Swiper
+	section.section.section-md
+		.container
+			.row
+				.col-md-7.wow.fadeInLeft
+					h1 best mexican dishes for you
+				.col-md-4.offset-md-1.wow.fadeInRight
+					p.mt-5 Mexico has long been among the world’s most popular holiday destinations, attracting sun seekers and food lovers alike. Discover even more foodie getaways, check our menu.
+					a(href='menu.html').btn.btn-icon explore menu
+				.col-12
+					.header__bg-image(style='background-image: url(images/header-1-1410x855.jpg)')
+						+img('header-2-803x742.png')
+	//Counters
+	section.section.section-md.text-center.wow.slideInDown
+		.container
+			.row.row-30.justify-content-center.bordered-1
+				.col-12.col-md-3
+					+counter({
+						title: 'Happy clients',
+						value: 10,
+						postfix: 'k'
+					})
+				.col-12.col-md-3
+					+counter({
+						title: 'Years in service',
+						value: 8,
+						postfix: '+'
+					})
+				.col-12.col-md-3
+					+counter({
+						title: 'Awards',
+						value: 5,
+						postfix: '+'
+					})
+
+
+	//About Us
+	section.section.section-testimonials.parallax-background.wow.fadeInRight(style='background-image: url(images/parallax-background.png); background-repeat: no-repeat; background-position: right 35%;')
+		.container
+			.col-12
+				.col-lg-6
+					h2 Great Cuisines. Incredible Experience.
+					.col-lg-8.mt-4.pl-0
+						p Mexican restaurant is a great opportunity to get acquainted with new tastes and get special gastronomic experiences.
+
+						a(href='our-story.html').btn.btn-default-outline our story
+
+				.parallax-scene-js.parallax-scene(data-scalar-x='5', data-scalar-y='10')
+					.layer-01
+						.layer(data-depth='0.45')
+							+img('parallax-scene-01-100x125.png')
+
+					.layer-02
+						.layer(data-depth='.65')
+							+img('parallax-scene-02-55x60.png')
+
+					.layer-03
+						.layer(data-depth='0.3'): +img('parallax-scene-03-131x157.png')
+
+					.layer-04
+						.layer(data-depth='0.55')
+							+img('parallax-scene-04-248x132.png')
+
+			.divider.divider-xxl
+
+			.row.text-center.justify-content-around
+				.col-lg-4.about-us__card
+					p This cozy restaurant has left the best impressions! Hospitable hosts, delicious dishes, beautiful presentation, wide wine list and wonderful dessert.
+					+img('partner-1-130x30.png')
+				.col-lg-4.about-us__card
+					p Excellent food. Menu is extensive and seasonal to a particularly high standard. Definitely fine dining. I gladly recommend it to every fan of Mexican cuisine!
+					+img('partner-2-200x30.png')
+				.col-lg-4.about-us__card
+					p This place is great! Atmosphere is chill and cool but the staff is also really friendly. The food is always fantastic and I am always delighted with my meal!
+					+img('partner-3-120x35.png')
+
+
+	//Owl Carousel
+	section.section.section-xl.bg-black.text-primary
+		.container-fluid
+			.row.justify-content-center.text-center
+				.col-lg-5
+					.text-center
+						h2.text-primary.wow.fadeScale Our Dishes
+
+					.owl-carousel.owl-theme(
+						data-items='1',
+						data-autoplay='true',
+						data-owl= {
+							dots: false,
+							nav: true,
+							autoplayTimeout: 5000,
+							smartSpeed: '1000'
+						}
+					)
+
+						.box-dishes
+							+img('menu-modern-1-620x620.png')
+							h4.text-primary.box-dishes__link
+								a(href='#') Fish in Escabeche Tacos
+							.box-dishes__content
+								.row
+									.col-12.col-xxl-3.text-center.mt-3.mt-xxl-4
+										svg(width='92' height='16' viewBox='0 0 92 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+											path(d='M8 0.000488281L10.4922 4.57026L15.6085 5.52835L12.0325 9.31072L12.7023 14.4726L8 12.2405L3.29772 14.4726L3.96752 9.31072L0.391548 5.52835L5.50779 4.57026L8 0.000488281Z' fill='#F3E43F')
+											path(d='M27 0.000488281L29.4922 4.57026L34.6085 5.52835L31.0325 9.31072L31.7023 14.4726L27 12.2405L22.2977 14.4726L22.9675 9.31072L19.3915 5.52835L24.5078 4.57026L27 0.000488281Z' fill='#F3E43F')
+											path(d='M46 0.000488281L48.4922 4.57026L53.6085 5.52835L50.0325 9.31072L50.7023 14.4726L46 12.2405L41.2977 14.4726L41.9675 9.31072L38.3915 5.52835L43.5078 4.57026L46 0.000488281Z' fill='#F3E43F')
+											path(d='M65 0.000488281L67.4922 4.57026L72.6085 5.52835L69.0325 9.31072L69.7023 14.4726L65 12.2405L60.2977 14.4726L60.9675 9.31072L57.3915 5.52835L62.5078 4.57026L65 0.000488281Z' fill='#F3E43F')
+											path(d='M84 0L86.4922 4.56977L91.6085 5.52786L88.0325 9.31023L88.7023 14.4721L84 12.24L79.2977 14.4721L79.9675 9.31023L76.3915 5.52786L81.5078 4.56977L84 0Z' fill='#F3E43F')
+									.col-8.col-lg-12.col-xxl-8.offset-2.offset-lg-0.text-center.text-xxl-left
+										p Fish filets (salmon or halibut), vegetable oil, garlic salt, fresh cracked pepper, red onion, cilantro, Roma tomato, Serrano chile, lime juice, La Banderita flour.
+
+							a(href='menu.html').btn.btn-primary.box-dishes__button explore menu
+
+						.box-dishes
+							+img('menu-modern-2-620x620.png')
+							h4.text-primary.box-dishes__link
+								a(href='#') White Corn Tortillas
+							.box-dishes__content
+								.row
+									.col-12.col-xxl-3.text-center.mt-3.mt-xxl-4
+										svg(width='92' height='16' viewBox='0 0 92 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+											path(d='M8 0.000488281L10.4922 4.57026L15.6085 5.52835L12.0325 9.31072L12.7023 14.4726L8 12.2405L3.29772 14.4726L3.96752 9.31072L0.391548 5.52835L5.50779 4.57026L8 0.000488281Z' fill='#F3E43F')
+											path(d='M27 0.000488281L29.4922 4.57026L34.6085 5.52835L31.0325 9.31072L31.7023 14.4726L27 12.2405L22.2977 14.4726L22.9675 9.31072L19.3915 5.52835L24.5078 4.57026L27 0.000488281Z' fill='#F3E43F')
+											path(d='M46 0.000488281L48.4922 4.57026L53.6085 5.52835L50.0325 9.31072L50.7023 14.4726L46 12.2405L41.2977 14.4726L41.9675 9.31072L38.3915 5.52835L43.5078 4.57026L46 0.000488281Z' fill='#F3E43F')
+											path(d='M65 0.000488281L67.4922 4.57026L72.6085 5.52835L69.0325 9.31072L69.7023 14.4726L65 12.2405L60.2977 14.4726L60.9675 9.31072L57.3915 5.52835L62.5078 4.57026L65 0.000488281Z' fill='#F3E43F')
+											path(d='M84 0L86.4922 4.56977L91.6085 5.52786L88.0325 9.31023L88.7023 14.4721L84 12.24L79.2977 14.4721L79.9675 9.31023L76.3915 5.52786L81.5078 4.56977L84 0Z' fill='#F3E43F')
+									.col-8.col-lg-12.col-xxl-8.offset-2.offset-lg-0.text-center.text-xxl-left
+										p Whole grain corn, Water, Contains 2% or less of the following: Preservatives (Propionic acid, Sodium hydroxide, Benzoic acid), Xanthan gum and traces of food grade lime.
+
+							a(href='menu.html').btn.btn-primary.box-dishes__button explore menu
+
+						.box-dishes
+							+img('menu-modern-3-620x620.png')
+							h4.text-primary.box-dishes__link
+								a(href='#') Spicy Chili Cups
+							.box-dishes__content
+								.row
+									.col-12.col-xxl-3.text-center.mt-3.mt-xxl-4
+										svg(width='92' height='16' viewBox='0 0 92 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+											path(d='M8 0.000488281L10.4922 4.57026L15.6085 5.52835L12.0325 9.31072L12.7023 14.4726L8 12.2405L3.29772 14.4726L3.96752 9.31072L0.391548 5.52835L5.50779 4.57026L8 0.000488281Z' fill='#F3E43F')
+											path(d='M27 0.000488281L29.4922 4.57026L34.6085 5.52835L31.0325 9.31072L31.7023 14.4726L27 12.2405L22.2977 14.4726L22.9675 9.31072L19.3915 5.52835L24.5078 4.57026L27 0.000488281Z' fill='#F3E43F')
+											path(d='M46 0.000488281L48.4922 4.57026L53.6085 5.52835L50.0325 9.31072L50.7023 14.4726L46 12.2405L41.2977 14.4726L41.9675 9.31072L38.3915 5.52835L43.5078 4.57026L46 0.000488281Z' fill='#F3E43F')
+											path(d='M65 0.000488281L67.4922 4.57026L72.6085 5.52835L69.0325 9.31072L69.7023 14.4726L65 12.2405L60.2977 14.4726L60.9675 9.31072L57.3915 5.52835L62.5078 4.57026L65 0.000488281Z' fill='#F3E43F')
+											path(d='M84 0L86.4922 4.56977L91.6085 5.52786L88.0325 9.31023L88.7023 14.4721L84 12.24L79.2977 14.4721L79.9675 9.31023L76.3915 5.52786L81.5078 4.56977L84 0Z' fill='#F3E43F')
+									.col-8.col-lg-12.col-xxl-8.offset-2.offset-lg-0.text-center.text-xxl-left
+										p Ground beef, diced onion, red pepper, green pepper, garlic, tomatoes, pinto beans & corn with La Banderita Mega Burrito Flour Tortillas, cheese, lettuce, sour cream,  guacamole.
+
+							a(href='menu.html').btn.btn-primary.box-dishes__button explore menu
+
+
+
+	// Gallery
+	section.section.section-xl.bg-transparent
+		.container
+			.row.justify-content-center
+				.col-6.col-xs-8
+					.text-center
+						h2.wow.fadeScale Gallery
+					// Owl Carousel
+					.owl-carousel.owl-visible(
+						data-items='1',
+						data-autoplay='true',
+						data-owl!={
+							margin: 80,
+							loop: false,
+							dots: false,
+							nav: true,
+							autoplayTimeout: 5000,
+							smartSpeed: '1000'
+						}, data-lightgallery
+					)
+						+thumbnail({
+							imgOriginal: 'gallery-01-original',
+							img: 'gallery-grid-01-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-02-original',
+							img: 'gallery-grid-02-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-03-original',
+							img: 'gallery-grid-03-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-04-original',
+							img: 'gallery-grid-04-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-05-original',
+							img: 'gallery-grid-05-690x480'
+						})
+
+	//Testimonials
+	include ../sections/_testimonials
+
+	//Our Blog
+	section.section.section-xl.bg-default
+		.container
+			article.blog-layout
+				.blog-layout-main
+					h2.text-center.wow.fadeScale Our Blog
+					.row.row-50.row-xxl-70.mt-5
+						.col-md-4
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +img('sidebar-blog-1-450x530')
+								ul.post-classic-meta
+									li: time(datetime='2021') March 2, 2021
+								h5.post-classic-title: a(href=links.post) Easy Ground Beef Tacos
+								.text-right.mt-4
+									a(href='single-post.html').btn.btn-icon read more
+								.divider
+
+						.col-md-4
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +img('sidebar-blog-2-450x530')
+								ul.post-classic-meta
+									li: time(datetime='2021') March 2, 2021
+								h5.post-classic-title: a(href=links.post) Mexican Corn Pinwheels
+								.text-right.mt-4
+									a(href='single-post.html').btn.btn-icon read more
+								.divider
+
+						.col-md-4
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +img('sidebar-blog-3-450x530')
+								ul.post-classic-meta
+									li: time(datetime='2021') March 2, 2021
+								h5.post-classic-title: a(href=links.post) Spicy Green Guacamole
+								.text-right.mt-4
+									a(href='single-post.html').btn.btn-icon read more
+								.divider
+
+						a(href='our-blog.html').btn.btn-default-outline.ml-auto.mr-auto see all posts
+
+	include ../sections/_footer-classic

@@ -1,0 +1,84 @@
+extends ../_skeleton
+
+block variables
+	- pageName = 'Our Story'
+
+block page
+	include ../sections/_header-classic
+	include ../components/thumbnail
+
+	+breadcrumbs
+
+
+	section.section.section-custom.bg-default
+		.container
+			.row
+				.col-lg-6.our-story__content
+					h2 World class mexican food! We cook the best Mexican food for you!
+					h6.subtitle.mt-5 We serve the freshest, most delicious ingredients cooked using our famous family recipes!
+					p.mt-5 The generosity, the search of the right taste, the elegance of the presentation of the dishes as well as the excellence at the service of the guests are always present. We love our customers and our employees are treated like family.
+				.col-lg-6.mt-5.mt-lg-0
+					+img('our-story-1-690x600.jpg')
+
+
+	section.section.section-xl.bg-default
+		.container.our-story__container
+			.row.align-items-center
+				.col-12.col-lg-6.our-story__content
+					+img('our-story-2-473x473.png')
+				.col-12.col-lg-6
+					h4 “I love to re-create recipes from our past, recipes from our families and from our friends.”
+					h6.our-story__chief Executive Chef
+					p.small Chef Luisa Sanchez
+
+
+	// Gallery
+	section.section.section-xl.bg-default
+		.container
+			.row.justify-content-center
+				.col-6.col-xs-8
+					.text-center
+						h2 Gallery
+					// Owl Carousel
+					.owl-carousel.owl-visible(
+						data-items='1',
+						data-autoplay='true',
+						data-owl!={
+							margin: 80,
+							loop: false,
+							dots: false,
+							nav: true,
+							autoplayTimeout: '2000',
+							smartSpeed: '1000'
+						}, data-lightgallery
+					)
+						+thumbnail({
+							imgOriginal: 'gallery-01-original',
+							img: 'gallery-grid-01-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-02-original',
+							img: 'gallery-grid-02-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-03-original',
+							img: 'gallery-grid-03-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-04-original',
+							img: 'gallery-grid-04-690x480'
+						})
+						+thumbnail({
+							imgOriginal: 'gallery-05-original',
+							img: 'gallery-grid-05-690x480'
+						})
+
+
+	//Testimonials
+	include ../sections/_testimonials
+
+
+
+
+
+	include ../sections/_footer-classic

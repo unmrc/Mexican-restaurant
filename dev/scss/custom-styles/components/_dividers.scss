@@ -1,0 +1,35 @@
+/** @section Dividers */
+
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: $hr-border-width solid $hr-border-color;
+}
+
+.divider {
+	font-size: 0;
+	line-height: 0;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 2px;
+		background-color: $black;
+	}
+	
+	&.divider-primary {
+		&::after {
+			background-color: $primary;
+		}
+	}
+	
+	&.divider-lg {
+		margin-top: 70px;
+	}
+	
+	&.divider-xxl {
+		margin-top: 500px;
+	}
+	
+}

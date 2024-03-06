@@ -1,0 +1,24 @@
+.our-story__container {
+	background: $white;
+	border-radius: 6px;
+	padding: 10px 15px;
+}
+
+.our-story__chief {
+	font-family: $font-family-base;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-top: 25px;
+}
+
+@include media-breakpoint-up(md) {
+	.our-story__container {
+		padding: 80px 120px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.our-story__content {
+		padding: 0 100px 0 0;
+	}
+}
